@@ -1,0 +1,10 @@
+name: SimpleBasicCommands
+version: '1.0'
+main: org.pytenix.SimpleBasicPlugin
+api-version: '1.19'
+author: PytenixOG
+description: Simple Basic Commands
+commands:
+  greet:
+    description: Greets a player
+    usage: /trace <Player>
