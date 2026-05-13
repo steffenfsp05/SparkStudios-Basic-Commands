@@ -7,4 +7,7 @@ description: Simple Basic Commands
 commands:
   greet:
     description: Greets a player
-    usage: /trace <Player>
+    usage: /greet <Player>
+  timecheck:
+    description: Displays the current server time.
+    usage: /timecheck

@@ -23,9 +23,9 @@ public class Configuration implements Serializable {
     public static Configuration defaultConfiguration() {
         return new Configuration(
                 new ArrayList<>(List.of(
-                        "",
-                        "",
-                        ""))
+                        "§e%source_name% greeted you!",
+                        "§eHello %name%!",
+                        "§eGreetings from %source_name%, §a%name%!"))
                 );
     }
 
