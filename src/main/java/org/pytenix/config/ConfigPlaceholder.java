@@ -14,8 +14,8 @@ import java.util.function.Function;
 
 public enum ConfigPlaceholder {
 
-    TARGET_NAME("%name%", placeholderInput -> placeholderInput.targetPlayer.getName()),
-    SOURCE_NAME("%sourcename%", placeholderInput -> placeholderInput.sourcePlayer.getName());
+    TARGET_NAME("name", placeholderInput -> placeholderInput.targetPlayer.getName()),
+    SOURCE_NAME("source_name", placeholderInput -> placeholderInput.sourcePlayer.getName());
 
 
     String placeholder;

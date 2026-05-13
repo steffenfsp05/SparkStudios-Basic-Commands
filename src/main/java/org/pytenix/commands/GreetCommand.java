@@ -70,7 +70,11 @@ public class GreetCommand implements CommandExecutor {
     {
         final List<String> greetMessages = plugin.getConfigService().getConfiguration().getGreetMessages();
 
-        String message = greetMessages.get(random.nextInt(greetMessages.size()-1));
+        if (greetMessages == null || greetMessages.isEmpty()) {
+            return Component.text("No messages configured.");
+        }
+
+        String message = greetMessages.get(random.nextInt(greetMessages.size()));
 
         return ConfigPlaceholder.formatMessageToComponent(message, placeholderInput);
 

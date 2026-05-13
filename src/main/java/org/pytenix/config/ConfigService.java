@@ -11,6 +11,7 @@ import org.yaml.snakeyaml.nodes.Tag;
 import org.yaml.snakeyaml.representer.Representer;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 public class ConfigService {
 
@@ -78,8 +79,7 @@ public class ConfigService {
 
 
     public boolean saveFile(Object data, File file) {
-        try (Writer writer = new FileWriter(file)) {
-
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(file), StandardCharsets.UTF_8)) {
             if (data instanceof Configuration)
                 writeComments(writer);
 
@@ -99,7 +99,7 @@ public class ConfigService {
         writer.write("# \n");
         writer.write("# Available Placeholders for 'greetMessages':\n");
         writer.write("# %name%           - The original name of the targetted Player\n");
-        writer.write("# %sourcename%      - The original name of the source Player\n");
+        writer.write("# %source_name%      - The original name of the source Player\n");
         writer.write("# \n");
         writer.write("# =======================================================\n\n");
     }
